@@ -1,0 +1,258 @@
+@font-face {
+    font-family: "Billabong";
+    src: url("../fonts/Billabong.ttf");
+}
+
+/* header */
+body {
+    height: 1000px;
+}
+.header {
+    padding: 1.2rem;
+    color: var(--clr-light);
+    overflow: hidden;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Billabong";
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+.nav-list {
+    width: 25%;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+}
+.nav-link {
+    color: var(--clr-light);
+}
+.stories {
+    width: 100%;
+    padding: 10px 0;
+    overflow-x: scroll;
+    color: white;
+}
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.story-list {
+    display: flex;
+}
+.story-item {
+    margin: 0 10px;
+}
+.story-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    padding: 0.2rem;
+}
+
+.story-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: flex;
+}
+.story-img::after {
+    content: "";
+    background-image: var(--linear-gradient-active-story);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.story-img:hover::after {
+    background-image: var(--linear-gradient-in-active-story);
+}
+
+.story-user-name {
+    font-size: 0.7rem;
+    padding: 6px 0;
+}
+/* header */
+/* posts */
+/* posts */
+.posts {
+    padding: 20px;
+    color: white;
+}
+.post-wrapper {
+    margin-bottom: 40px;
+    margin-top: -40px;
+}
+.post-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+}
+.profile-info {
+    /* padding: 0 10px; */
+    display: flex;
+    align-items: center;
+    width: 45%;
+    justify-content: space-between;
+}
+.settings {
+    position: static;
+}
+.settings a {
+    color: White;
+}
+.profile-img {
+    width: 40px;
+    height: 40px;
+}
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.post-action {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+.post-action-left {
+    width: 30%;
+}
+.post-action-right a {
+    color: white;
+}
+.action-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-txt {
+    padding-left: 10px;
+    font-weight: 200;
+}
+.action-link {
+    color: white;
+}
+
+.post-comment-text-area {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#commet-img {
+    width: 100%;
+}
+.comment-write {
+    width: 70%;
+    height: 50px;
+}
+.comment-write input {
+    height: 100%;
+    width: 95%;
+    background: transparent;
+    border: 0;
+    color: white;
+}
+
+.comment-write input:focus {
+    outline: none;
+}
+.emoji-list {
+    display: flex;
+}
+
+.post-img {
+    padding: 10px 0;
+    width: 100%;
+    height: fit-content;
+}
+.post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.profile-info {
+    width: 100%;
+}
+
+.post-profile-name {
+    width: 85%;
+}
+.settings-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform: translate(-50%, -50%) scale(0, 0);
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.settings-list {
+    height: 350px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--clr-dark);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0.2px black;
+}
+
+.settings-item {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.settings-link {
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 19px;
+    display: block;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.settings-link:hover,
+.settings-link:focus {
+    outline: none;
+    background-color: black;
+}
+
+.checkbox {
+    display: none;
+}
+.checkbox:checked ~ .settings-container {
+    transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+}

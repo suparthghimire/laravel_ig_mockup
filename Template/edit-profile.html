@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/addpost-index.css" />
+        <link rel="stylesheet" href="css/edit-profile.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form action="">
+                <header
+                    class="header d-flex justify-content-bt w-100 align-items-center"
+                >
+                    <div
+                        class="header-wrapper d-flex align-items-center w-30 justify-content-bt"
+                    >
+                        <a href="#" class="text-white">
+                            <i class="fas fa-times text-md"></i>
+                        </a>
+                        <h2 class="header-title">Edit Profile</h2>
+                    </div>
+                    <div>
+                        <a href="#" action="process.php" class="text-primary">
+                            <label for="submit"
+                                ><i class="fas fa-check text-md"></i
+                            ></label>
+                            <input
+                                type="submit"
+                                value="Submit"
+                                class="d-none"
+                                id="submit"
+                            />
+                        </a>
+                    </div>
+                </header>
+                <main class="edit mt-30">
+                    <div
+                        class="profile-img-container w-100 d-flex flex-column align-items-center"
+                    >
+                        <div class="profile-img">
+                            <img src="img/profiles/profile.jpg" alt="" />
+                        </div>
+                        <p class="ptb-10 w-100 text-center">
+                            <label
+                                for="profile_image"
+                                class="text-primary lp-1 d-block"
+                            >
+                                Change Profile Picture
+                            </label>
+                            <input
+                                type="file"
+                                class="d-none"
+                                id="profile_image"
+                            />
+                        </p>
+                    </div>
+                    <p class="text-white prl-20 font-weight-bold lp-1 mtb-20">
+                        Profile Information
+                    </p>
+                    <div class="form-container">
+                        <div class="edit-form-group d-flex flex-column p-20">
+                            <input
+                                type="text"
+                                id="name"
+                                class="edit-form-control ptb-10"
+                                required
+                            />
+                            <label for="name" class="edit-form-label"
+                                >Name</label
+                            >
+                        </div>
+                        <div class="edit-form-group d-flex flex-column p-20">
+                            <input
+                                type="text"
+                                id="uname"
+                                class="edit-form-control ptb-10"
+                                required
+                            />
+                            <label for="uname" class="edit-form-label"
+                                >Username</label
+                            >
+                        </div>
+                        <div class="edit-form-group d-flex flex-column p-20">
+                            <input
+                                type="text"
+                                id="bio"
+                                class="edit-form-control ptb-10"
+                                required
+                            />
+                            <label for="bio" class="edit-form-label">Bio</label>
+                        </div>
+
+                        <section class="profile">
+                            <p
+                                class="text-white prl-20 font-weight-bold lp-1 mtb-20"
+                            >
+                                User Information
+                            </p>
+                            <div
+                                class="edit-form-group d-flex flex-column p-20"
+                            >
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="edit-form-control ptb-10"
+                                    required
+                                />
+                                <label for="email" class="edit-form-label"
+                                    >Email</label
+                                >
+                            </div>
+                            <div
+                                class="edit-form-group d-flex flex-column p-20"
+                            >
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="edit-form-control ptb-10"
+                                    required
+                                />
+                                <label for="password" class="edit-form-label"
+                                    >Password</label
+                                >
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </form>
+        </div>
+        <footer class="footer">
+            <ul class="footer-list">
+                <li class="footer-item">
+                    <a href="index.html" class="footer-link">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="search.html" class="footer-link">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="AddPost.html" class="footer-link">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="notification.html" class="footer-link">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="profile.html" class="footer-link">
+                        <div class="profile-icon">
+                            <img src="img/profiles/profile.jpg" alt="" />
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+    <script
+        src="https://kit.fontawesome.com/7b32ce4356.js"
+        crossorigin="anonymous"
+    ></script>
+</html>

@@ -1,0 +1,141 @@
+.header {
+    padding: 20px;
+    color: white;
+    background-color: #3f3f3f;
+    font-size: 0.9rem;
+    letter-spacing: 1.1px;
+}
+
+.add-post {
+    width: 100%;
+    height: 90vh;
+    padding: 10rem 0;
+    padding-top: 5rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.form-group {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    padding: 1rem 0;
+    border-bottom: 2px solid #949494;
+}
+.post-img-upload {
+    display: none;
+}
+
+.addimg-btn {
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    transition: 100ms ease-in-out;
+}
+.addimg-btn:hover {
+    background-color: #2a2a2a;
+    color: white;
+}
+.form-title {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.no-border {
+    border: 0;
+}
+.post-caption {
+    width: 100%;
+    text-align: center;
+    height: 2rem;
+    position: relative;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 1.2rem;
+    text-align: left;
+}
+.post-caption:focus {
+    outline: 0;
+}
+.post-caption::placeholder {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.socialmedia-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    color: white;
+}
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 0;
+    align-items: center;
+}
+.other-platform {
+    display: none;
+}
+
+.toggle-btn {
+    width: 80px;
+    height: 35px;
+    border-radius: 30px;
+    background: #747474;
+    position: relative;
+    transition: 100ms ease-in-out;
+}
+
+.toggle-btn::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    box-shadow: 0 0 6px 0 #2a2a2a;
+    background-color: white;
+    right: 60%;
+    border-radius: 50%;
+    top: 15%;
+    position: absolute;
+    transition: 150ms ease-in-out;
+}
+
+.other-platform:checked ~ .toggle-btn {
+    background-color: rgb(134, 248, 143);
+}
+
+.other-platform:checked ~ .toggle-btn::after {
+    right: 5px;
+}
+
+.post-share {
+    border: 0;
+    width: 100%;
+    background-color: white;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    color: #ed5171;
+    letter-spacing: 1px;
+
+    padding: 10px;
+    border-radius: 40px;
+}
+.post-share:focus {
+    outline: 0;
+}

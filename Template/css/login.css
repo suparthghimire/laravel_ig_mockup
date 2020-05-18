@@ -1,0 +1,125 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--clr-light);
+}
+
+.logo {
+    font-family: "Billabong";
+    font-size: 2rem;
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    --clr-btn: #1c88ee;
+    border: 0;
+    background: #575757bd;
+    margin: 10px 0;
+    width: 85vw;
+    padding: 1rem;
+    border-radius: 3px;
+    color: white;
+}
+
+.form-control:focus {
+    outline: none;
+}
+.form-control::placeholder {
+    color: #727272;
+    font-size: 0.9rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.form-group {
+    position: relative;
+}
+.pwd-toggle {
+    position: absolute;
+    right: 20px;
+    top: 1.5rem;
+}
+
+#eye {
+    color: rgb(212, 212, 212);
+}
+.pwd-toggler {
+    display: flex;
+    z-index: 1;
+    transform: rotateZ(0);
+}
+.toggle-line {
+    position: absolute;
+    background: white;
+    width: 3px;
+    height: 30px;
+    top: -1px;
+    right: 18px;
+    z-index: 999;
+    transform: scale(0, 0) rotateZ(-45deg);
+    transition: transform 150ms ease-in-out;
+    border-radius: 30px;
+    transform-origin: top;
+}
+.toggle-line-active {
+    transform: scale(1, 1) rotateZ(-45deg);
+}
+.pwd-toggle:hover::before {
+    /* background: red; */
+    transform: scale(1, 1) rotateZ(-45deg);
+}
+
+.button {
+    background: var(--clr-btn);
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.small-detail-txt {
+    text-align: center;
+    margin-top: 0.2rem;
+    color: #a7a7a7;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+.small-bold-txt {
+    font-weight: bolder;
+    font-size: 0.8rem;
+    color: var(--clr-light);
+}
+.seperator {
+    padding: 10px 0;
+    display: flex;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.seperator::before,
+.seperator::after {
+    content: "";
+    height: 1.5px;
+    position: absolute;
+    width: 38vw;
+
+    top: 50%;
+    background: #4d4c4c;
+}
+.seperator::before {
+    left: -40vw;
+}
+.seperator::after {
+    right: -40vw;
+}

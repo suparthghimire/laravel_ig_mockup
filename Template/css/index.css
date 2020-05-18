@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-dark: #2f2f30;
+    --clr-light: rgb(255, 255, 255);
+    --linear-gradient-active-story: linear-gradient(45deg, #dd2a7b, #8134a4);
+    --linear-gradient-in-active-story: linear-gradient(45deg, #635e60, #635e60);
+}
+
+body {
+    background: var(--clr-dark);
+    width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.profile-name {
+    font-weight: bold;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.w-20 {
+    width: 20vw;
+}
+.w-30 {
+    width: 30vw;
+}
+.w-45 {
+    width: 45vw;
+}
+.w-50 {
+    width: 50vw;
+}
+.w-100 {
+    width: 100vw;
+}
+.mr-30 {
+    margin-right: 30px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.p-10 {
+    padding: 10px;
+}
+.ptb-10 {
+    padding: 10px 0;
+}
+.prl-10 {
+    padding: 0 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+.ptb-20 {
+    padding: 20px 0;
+}
+.prl-20 {
+    padding: 0 20px;
+}
+.m-10 {
+    margin: 10px;
+}
+.mtb-10 {
+    margin: 10px 0;
+}
+.mrl-10 {
+    margin: 0 10px;
+}
+.m-20 {
+    margin: 20px;
+}
+.mtb-20 {
+    margin: 20px 0;
+}
+.mrl-20 {
+    margin: 0 20px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+
+.text-white {
+    color: white;
+}
+.align-items-center {
+    align-items: center;
+}
+.justify-content-sa {
+    justify-content: space-around;
+}
+.justify-content-se {
+    justify-content: space-evenly;
+}
+.justify-content-bt {
+    justify-content: space-between;
+}
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-primary {
+    color: rgb(91, 155, 250);
+}
+
+.text-md {
+    font-size: 1rem;
+}
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.lp-1 {
+    letter-spacing: 1px;
+}
+
+.d-block {
+    display: block;
+}
+.text-center {
+    text-align: center;
+}
+.invalid-feedback {
+    display: block;
+}
+
+.border-red {
+    border: 1px solid red;
+}
