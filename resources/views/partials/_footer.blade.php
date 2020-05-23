@@ -17,6 +17,10 @@
     <li class="footer-item">
         <a href="{{route('notification.index')}}" class="footer-link">
             <i class="far fa-heart"></i>
+            @if (auth()->user()->unreadNotifications->count()!=0)
+            <span class="notification"></span>
+            @endif
+
         </a>
     </li>
     <li class="footer-item">

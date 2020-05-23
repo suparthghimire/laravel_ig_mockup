@@ -13,204 +13,38 @@
 </header>
 <main class="notifications">
     <div class="notification-container">
-        <p class="day-indicator">
-            Yesterday
-        </p>
+
         <div class="notification-wrapper">
             <ul class="notification-list">
+                @foreach (auth()->user()->unreadNotifications as $notification)
                 <li class="notification-item">
                     <a href="#" class="notification-link">
                         <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
+                            @if ($notification->data['user_image'])
+                            <img src="/storage/uploads/profile/{{$notification->data['user_image']}}"
+                                alt="Profile Image">
+                            @else
+                            <img src="{{asset('assets/img/default/default.jpg')}}" alt="Profile Image">
+                            @endif
+
                         </div>
                         <div class="notification-info">
                             <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
+                                <span class="profile-name text-sm">
+                                    {{$notification->data['user_name']}}
                                 </span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, neque!
+                                <span class="d-block text-sm">
+                                    liked your post
+                                </span>
                             </p>
                         </div>
                         <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
+                            <img src="/storage/uploads/posts/{{$notification->data['post_image']}}" alt="">
                         </div>
                     </a>
                 </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, neque!
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>
-    <div class="notification-container">
-        <p class="day-indicator">
-            This Week
-        </p>
-        <div class="notification-wrapper margin-bottom">
-            <ul class="notification-list">
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet!
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing!
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="img/posts/posts.jpg" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li class="notification-item">
-                    <a href="#" class="notification-link">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                        </div>
-                        <div class="notification-info">
-                            <p>
-                                <span class="profile-name">
-                                    suparth.ghimire
-                                </span>
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="post-img">
-                            <img src="{{asset('assets/img/posts/posts.jpg')}}" alt="">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</main>
-
-@endsection
+</main> @endsection

@@ -180,3 +180,16 @@ a {
 .font-weight-light {
     font-weight: lighter;
 }
+
+.footer-link {
+    position: relative;
+}
+.notification {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: red;
+    bottom: -10px;
+    left: 42%;
+}
