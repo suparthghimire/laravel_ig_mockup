@@ -2,10 +2,8 @@
 
 
 @section('stylesheets')
-<link rel="stylesheet" href="{{asset('assets/css/footer.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/css/home-index.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/css/addpost-index.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/css/index.css')}}" />
 @endsection
 
 @section('content')
@@ -72,7 +70,11 @@
             <div class="post-action-left">
                 <ul class="action-list">
                     <li class="action-item">
-                        <a href="#" class="action-link"><i class="far fa-heart"></i></a>
+                        {!! Form::open(['route'=>['like',$post->id],'method'=>'post']) !!}
+                        <button class="button" id="button">
+                            <i id="like" class="far fa-heart white"></i>
+                        </button>
+                        {!! Form::close() !!}
                     </li>
                     <li class="action-item">
                         <a href="#" class="action-link"><i class="far fa-comment"></i></a>
@@ -86,7 +88,7 @@
                 <a href="#"><i class="far fa-bookmark"></i></a>
             </div>
         </div>
-        <p class="post-likes">28 Likes</p>
+        <p class="post-likes">{{$post->likes->count()}} Likes</p>
         {{-- {{dd($post->caption)}} --}}
         @if ($post->caption)
         <p class="caption">
@@ -97,32 +99,18 @@
             </span>
         </p>
         @endif
-        <div class="post-comment">
+        <div class="post-comment mb-20 ">
             <div class="post-highlighted-comment">
-                <p class="comment-container"></p>
-                <span class="profile-name">suparth.ghimrie</span>
-                <span class="comment-txt">Wouuuu! Nice Picture!</span>
-                </p>
-            </div>
-            <div class="post-comment-text-area">
-                <div class="story-img profile-img" id="comment-img">
-                    <img src="{{asset('assets/img/profiles/profile.jpg')}}" alt="">
-                </div>
-                <div class="comment-write">
-                    <input type="text" placeholder="Add a Comment." />
-                </div>
-                <div class="post-emojis">
-                    <ul class="emoji-list">
-                        <li class="emoji-item">
-                            <a href="#" class="emoji-link">😀</a>
-                        </li>
-                        <li class="emoji-item">
-                            <a href="#" class="emoji-link">🥰</a>
-                        </li>
-                    </ul>
-                </div>
+                @if($post->comments->count()==0)
+                <a class="text-white text-sm">This post Has No Comments. Add One?</a>
+                @else
+                <a href="{{route('comments.show',$post->id)}}" class="text-white text-sm mtb-10">View all
+                    {{$post->comments->count()}} Comments and Add
+                    one Here</a>
+                @endif
             </div>
         </div>
+    </div>
     </div>
 
 </main>

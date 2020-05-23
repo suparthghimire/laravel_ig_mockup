@@ -151,42 +151,6 @@ body {
     justify-content: space-between;
 }
 
-.comment-txt {
-    padding-left: 10px;
-    font-weight: 200;
-}
-.action-link {
-    color: white;
-}
-
-.post-comment-text-area {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#commet-img {
-    width: 100%;
-}
-.comment-write {
-    width: 70%;
-    height: 50px;
-}
-.comment-write input {
-    height: 100%;
-    width: 95%;
-    background: transparent;
-    border: 0;
-    color: white;
-}
-
-.comment-write input:focus {
-    outline: none;
-}
-.emoji-list {
-    display: flex;
-}
-
 .post-img {
     padding: 10px 0;
     width: 100%;

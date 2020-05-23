@@ -41,6 +41,9 @@ a {
 .w-50 {
     width: 50vw;
 }
+.w-70 {
+    width: 70vw;
+}
 .w-100 {
     width: 100vw;
 }
@@ -149,4 +152,12 @@ a {
 
 .border-red {
     border: 1px solid red;
+}
+
+.screen-center {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

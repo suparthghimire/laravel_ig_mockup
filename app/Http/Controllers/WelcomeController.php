@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Like;
+use App\Comment;
 
 class WelcomeController extends Controller
 {
@@ -14,8 +16,17 @@ class WelcomeController extends Controller
 
     public function index()
     {
+
+        $comments = Comment::all();
         $users = auth()->user()->following()->pluck('profiles.user_id');
-        $posts = Post::whereIn('user_id', $users)->latest()->get();
-        return view('welcome')->withPosts($posts);
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->get();
+        return view('welcome')->withPosts($posts)->withComments($comments);
+    }
+    public function indexVue()
+    {
+
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->get();
+        return response()->json($posts);
     }
 }

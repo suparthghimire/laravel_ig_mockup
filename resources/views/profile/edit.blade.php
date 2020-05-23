@@ -21,7 +21,6 @@
         <a href="#" action="process.php" class="text-primary">
             <label for="submit"><i class="fas fa-check text-md"></i></label>
             <input type="submit" value="Submit" class="d-none" id="submit" />
-
         </a>
     </div>
 </header>
@@ -54,28 +53,6 @@
                 class="edit-form-control ptb-10" required />
             <label for="bio" name="bio" class="edit-form-label">Bio</label>
         </div>
-
-        {{-- <section class="profile">
-            <p class="text-white prl-20 font-weight-bold lp-1 mtb-20">
-                User Information
-            </p>
-            <div class="edit-form-group d-flex flex-column p-20">
-                <input type="text" id="name" value="{{auth()->user()->email}}" class="edit-form-control ptb-10"
-        required />
-        <label for="email" class="edit-form-label">Email</label>
-    </div>
-    <div class="edit-form-group d-flex flex-column p-20">
-        <input type="password" value="{{auth()->user()->password}}" id="password" class="edit-form-control ptb-10"
-            required />
-        <label for="password" class="edit-form-label">Password</label>
-        <div class="pwd-toggle">
-            <a href="#" id="eye">
-                <i class="fas fa-eye pwd-toggler"></i>
-            </a>
-            <span class="toggle-line" id="toggle-line"></span>
-        </div>
-    </div>
-    </section> --}}
     </div>
 </main>
 {{Form::close()}}

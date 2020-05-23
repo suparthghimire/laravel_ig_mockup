@@ -84,7 +84,7 @@
             {{$user->profile->bio ?? ""}}
         </p>
     </section>
-    <div class="btn-container" id="app">
+    <div class="btn-container" id="followBtn">
         @can('update', $user->profile)
         <a href="{{route('profile.edit',$user->id)}}">
             Edit Profile
@@ -94,7 +94,9 @@
         </follow-component>
         @endcan
 
+
     </div>
+
     <br>
     <section class="stories">
         <ul class="story-list">

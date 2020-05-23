@@ -101,7 +101,7 @@ body {
     color: white;
 }
 .post-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     margin-top: -40px;
 }
 .post-header {
@@ -255,4 +255,23 @@ body {
 .checkbox:checked ~ .settings-container {
     transform: translate(-50%, -50%) scale(1, 1);
     opacity: 1;
+}
+.button {
+    background-color: transparent; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: red;
+    font-size: 1.5rem;
+}
+.button:focus {
+    outline: none;
+}
+.button:hover {
+    cursor: pointer;
+}
+.white {
+    color: white;
 }

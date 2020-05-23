@@ -106,7 +106,8 @@
             <br>Follow Some Users to see posts here
         </p>
         </div>
-        @else @foreach ($posts as $post) <div class="post-wrapper">
+        @else @foreach ($posts as $post)
+        <div class="post-wrapper">
             <div class="post-header">
                 <div class="profile-info">
                     <div class="story-img profile-img">
@@ -158,12 +159,7 @@
                 <div class="post-action-left">
                     <ul class="action-list">
                         <li class="action-item" id="likeBtn">
-
-                            {!! Form::open(['route'=>['like',$post->id],'method'=>'post']) !!}
-                            <button class="button" id="button">
-                                <i id="like" class="far fa-heart white"></i>
-                            </button>
-                            {!! Form::close() !!}
+                            <like-component post-id="{{$post->id}}"></like-component>
                         </li>
                         <li class="action-item">
                             <a href="#" class="action-link"><i class="far fa-comment"></i></a>
@@ -179,24 +175,30 @@
                 </div>
             </div>
             <p class="post-likes">{{$post->likes->count()}} Likes</p>
-            @if ($post->caption)
-            <p class="caption">
-                <a href="{{route('profile.index',$post->user->id)}}"
-                    class="text-white font-weight-bold">{{$post->user->name}}</a>
-                <span class="caption-txt">
-                    {{$post->caption}}
-                </span>
-            </p>
-            @endif
-            <div class="post-comment mb-20 ">
+            <div class="post-comment">
                 <div class="post-highlighted-comment">
-                    @if($post->comments->count()==0)
-                    <a class="text-white text-sm">This post Has No Comments. Add One?</a>
-                    @else
-                    <a href="{{route('comments.show',$post->id)}}" class="text-white text-sm mtb-10">View all
-                        {{$post->comments->count()}} Comments and Add
-                        one Here</a>
-                    @endif
+                    <p class="comment-container"></p>
+                    <span class="profile-name">suparth.ghimrie</span>
+                    <span class="comment-txt">Wouuuu! Nice Picture!</span>
+                    </p>
+                </div>
+                <div class="post-comment-text-area">
+                    <div class="story-img profile-img" id="comment-img">
+                        <img src="/storage/uploads/profile/{{auth()->user()->profile->image}}" alt="">
+                    </div>
+                    <div class="comment-write">
+                        <input type="text" placeholder="Add a Comment." />
+                    </div>
+                    <div class="post-emojis">
+                        <ul class="emoji-list">
+                            <li class="emoji-item">
+                                <a href="#" class="emoji-link">😀</a>
+                            </li>
+                            <li class="emoji-item">
+                                <a href="#" class="emoji-link">🥰</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,6 +211,6 @@
 
 
 @section('scripts')
-<script src="{{asset('assets/js/welcome.js')}}"></script>
+<script src="{{asset('assets/js/login.js')}}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
 @endsection

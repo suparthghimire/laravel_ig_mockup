@@ -29,3 +29,8 @@ Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.updat
 
 
 Route::post('follow/{user}', 'FollowController@store');
+
+Route::post('/like/{post}', 'LikesController@store')->name('like');
+
+Route::post('comments/{post}', 'CommentsController@store')->name('comments.store');
+Route::get('comments/{post}', 'CommentsController@show')->name('comments.show');

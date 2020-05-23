@@ -19,9 +19,16 @@ window.Vue = require("vue");
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+const follow = require("./components/FollowComponent.vue").default;
+const lileBtn = require("./components/LikeComponent.vue").default;
+
 Vue.component(
     "follow-component",
     require("./components/FollowComponent.vue").default
+);
+Vue.component(
+    "like-component",
+    require("./components/LikeComponent.vue").default
 );
 
 /**
@@ -30,6 +37,9 @@ Vue.component(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: "#app",
+const followBtn = new Vue({
+    el: "#followBtn"
+});
+const likeBtn = new Vue({
+    el: "#likeBtn"
 });

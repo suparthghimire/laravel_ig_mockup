@@ -1,0 +1,22 @@
+.comment-input {
+    background: transparent;
+    border: 0;
+    width: 90%;
+    padding: 10px;
+    color: white;
+}
+.comment-input:focus {
+    outline: none;
+}
+
+.comment-group {
+    width: 100%;
+}
+.comment-btn {
+    border: 0;
+    background: none;
+    color: white;
+}
+.comment-btn:focus {
+    outline: none;
+}

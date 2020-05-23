@@ -41,6 +41,9 @@ a {
 .w-45 {
     width: 45vw;
 }
+.w-80 {
+    width: 80vw;
+}
 .w-100 {
     width: 100vw;
 }
@@ -75,6 +78,9 @@ a {
 .mtb-10 {
     margin: 10px 0;
 }
+.mtb-15 {
+    margin: 15px 0;
+}
 .mrl-10 {
     margin: 0 10px;
 }
@@ -86,6 +92,9 @@ a {
 }
 .mrl-20 {
     margin: 0 20px;
+}
+.mb-20 {
+    margin-bottom: 20px;
 }
 
 .d-flex {
@@ -129,6 +138,9 @@ a {
 .text-md {
     font-size: 1rem;
 }
+.text-sm {
+    font-size: 0.8rem;
+}
 .font-weight-bold {
     font-weight: bold;
 }
@@ -142,6 +154,9 @@ a {
 }
 .text-center {
     text-align: center;
+}
+.text-right {
+    text-align: right;
 }
 .invalid-feedback {
     display: block;
@@ -160,4 +175,8 @@ a {
     border: 0;
     background: none;
     font-size: 1rem;
+}
+
+.font-weight-light {
+    font-weight: lighter;
 }
