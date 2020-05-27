@@ -1,9 +1,6 @@
-@extends('layouts.user')
-@section('stylesheets')
-<link rel="stylesheet" href="{{asset('assets/css/home-index.css')}}">
-@endsection
-
-@section('content')
+@extends('layouts.user') @section('stylesheets')
+<link rel="stylesheet" href="{{asset('assets/css/home-index.css')}}" />
+@endsection @section('content')
 <header class="header" id="header">
     <nav class="nav" id="nav">
         <h1 class="logo" id="logo">
@@ -28,7 +25,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/add_new_stories.png')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/add_new_stories.png')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -38,7 +35,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/suparth.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/suparth.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -48,7 +45,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/siddharth.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/siddharth.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -58,7 +55,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -68,7 +65,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/suresh.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/suresh.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -78,7 +75,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -88,7 +85,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/sabitra.jpg')}}" alt="Add new Story">
+                            <img src="{{asset('assets/img/stories/sabitra.jpg')}}" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -99,83 +96,63 @@
 </header>
 
 <main class="posts">
-
     @if (count($posts)<=0) <div class="screen-center">
         <p class="text-center">
             Woops! Looks Like You Donot Follow Anyone!
-            <br>Follow Some Users to see posts here
+            <br />Follow Some Users to see posts here
         </p>
         </div>
-        @else @foreach ($posts as $post) <div class="post-wrapper">
+        @else @foreach ($posts as $post)
+        <div class="post-wrapper">
             <div class="post-header">
                 <div class="profile-info">
                     <div class="story-img profile-img">
                         @if ($post->user->profile->image)
-                        <img src="/storage/uploads/profile/{{$post->user->profile->image}}" alt="Profile Image">
+                        <img src="/storage/uploads/profile/{{$post->user->profile->image}}" alt="Profile Image" />
                         @else
-                        <img src="{{asset('assets/img/default/default.jpg')}}" alt="Profile Image">
+                        <img src="{{asset('assets/img/default/default.jpg')}}" alt="Profile Image" />
                         @endif
                     </div>
                     <span class="profile-name post-profile-name">
                         <a href="{{route('profile.index',$post->user->id)}}"
                             class="text-white">{{$post->user->name}}</a>
                     </span>
-
-                </div>
-                <input type="checkbox" name="checkbox-0" id="checkbox-0" class="checkbox">
-                <label for="checkbox-0">
-                    <!--Yesma counter halna parxa-->
-                    <div class="settings">
-                        <i class="fas fa-ellipsis-v setting-icon" id="setting-icon"></i>
-                    </div>
-                </label>
-                <div class="settings-container">
-                    <ul class="settings-list">
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Edit</a>
-                        </li>
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Turn On Post Notification</a>
-                        </li>
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Copy Link</a>
-                        </li>
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Share To...</a>
-                        </li>
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Unfollow</a>
-                        </li>
-                        <li class="settings-item">
-                            <a href="#" class="settings-link">Mute</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
             <div class="post-img">
-                <img src="/storage/uploads/posts/{{$post->image}}" alt=""> </div>
+                <img src="/storage/uploads/posts/{{$post->image}}" alt="" />
+            </div>
             <div class="post-action">
                 <div class="post-action-left">
                     <ul class="action-list">
                         <li class="action-item" id="likeBtn">
-
-                            {!! Form::open(['route'=>['like',$post->id],'method'=>'post']) !!}
+                            {{-- {!!
+                            Form::open(['route'=>['like',$post->id],'method'=>'post'])
+                            !!}
                             <button class="button" id="button">
+                                @if(App\Like::where(['user_id'=>auth()->user()->id,'post_id'=>$post->id])->get()->count()!=0)
+                                <i id="like" class="fas fa-heart red"></i>
+                                @else
                                 <i id="like" class="far fa-heart white"></i>
+                                @endif
                             </button>
-                            {!! Form::close() !!}
+                            {!! Form::close() !!} --}}
+                            <button class="button" id="button" data-target="console">
+                                @if(App\Like::where(['user_id'=>auth()->user()->id,'post_id'=>$post->id])->get()->count()!=0)
+                                <i id="like" class="fas fa-heart red"></i>
+                                @else
+                                <i id="like" class="far fa-heart white"></i>
+                                @endif
+                            </button>
                         </li>
                         <li class="action-item">
-                            <a href="#" class="action-link"><i class="far fa-comment"></i></a>
+                            <a href="{{route('comments.show',$post->id)}}" class="action-link"><i
+                                    class="far fa-comment"></i></a>
                         </li>
                         <li class="action-item">
                             <a href="#" class="action-link"><i class="fas fa-paper-plane"></i></a>
                         </li>
-
                     </ul>
-                </div>
-                <div class="post-action-right">
-                    <a href="#"><i class="far fa-bookmark"></i></a>
                 </div>
             </div>
             <p class="post-likes">{{$post->likes->count()}} Likes</p>
@@ -191,22 +168,20 @@
             <div class="post-comment mb-20 ">
                 <div class="post-highlighted-comment">
                     @if($post->comments->count()==0)
-                    <a class="text-white text-sm">This post Has No Comments. Add One?</a>
+                    <a href="{{route('comments.show',$post->id)}}" class="text-white text-sm">This post Has No Comments.
+                        Add One?</a>
                     @else
                     <a href="{{route('comments.show',$post->id)}}" class="text-white text-sm mtb-10">View all
-                        {{$post->comments->count()}} Comments and Add
-                        one Here</a>
+                        {{$post->comments->count()}} Comments and Add one
+                        Here</a>
                     @endif
                 </div>
             </div>
         </div>
-        @endforeach
-        @endif
+        @endforeach @endif
 </main>
 
-
 @endsection
-
 
 @section('scripts')
 <script src="{{asset('assets/js/welcome.js')}}"></script>

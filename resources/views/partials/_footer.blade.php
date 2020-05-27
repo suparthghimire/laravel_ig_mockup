@@ -5,7 +5,7 @@
         </a>
     </li>
     <li class="footer-item">
-        <a href="search.html" class="footer-link">
+        <a href="{{route('searchView')}}" class="footer-link">
             <i class="fas fa-search"></i>
         </a>
     </li>

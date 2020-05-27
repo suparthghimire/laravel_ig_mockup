@@ -6,11 +6,13 @@
 </head>
 
 <body>
-    @yield('content')
+    <div class="slideIn">
+        @yield('content')
+    </div>
+    @include('partials._scripts')
+    <footer class="footer">
+        @include('partials._footer')
+    </footer>
 </body>
-@include('partials._scripts')
-<footer class="footer">
-    @include('partials._footer')
-</footer>
 
 </html>

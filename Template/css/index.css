@@ -35,6 +35,9 @@ a {
 .w-30 {
     width: 30vw;
 }
+.w-40 {
+    width: 40vw;
+}
 .w-45 {
     width: 45vw;
 }
@@ -160,4 +163,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.border-red {
+    border: 1px solid red;
 }

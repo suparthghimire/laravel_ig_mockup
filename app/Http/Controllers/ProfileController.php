@@ -7,7 +7,6 @@ use App\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-
 class ProfileController extends Controller
 {
 
@@ -92,5 +91,29 @@ class ProfileController extends Controller
         $user->profile->save();
 
         return redirect()->route('profile.index', $user->id);
+    }
+    public function searchView()
+    {
+        return view('search.index');
+    }
+
+    public function search(Request $request, $user)
+    {
+        // $query = $request->input('query');
+        $query = $user;
+        // dd($query);
+        if ($query != '') {
+            $users = User::where('name', 'LIKE', '%' . $query . '%')->orWhere('email', 'LIKE', '%' . $query . '%')->with('profile')->get();
+
+            return response()->json($users);
+            // return view('search.index')->withUsers($users)->withQuery($query);
+
+        }
+        // return view('search.index')->withMessage('Empty Query');
+
+        // $users = User::all();
+        // return response()->json($users);
+        // $users = User::where('name', $request->keywords)->get();
+        // return response()->json($users);
     }
 }

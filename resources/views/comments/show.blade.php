@@ -8,8 +8,9 @@
 @section('content')
 <header class="header">
     <div class="header-wrapper d-flex align-items-center w-30 justify-content-bt">
-        <a href="#" class="text-white">
-            <i class="fas fa-arrow-left"></i></a>
+        <a href="{{route('back')}}" class="text-white">
+            <i class="fas fa-arrow-left"></i>
+        </a>
         <h2 class="header-title ml-20">Comments </h2>
     </div>
 </header>
@@ -48,13 +49,22 @@
             </div>
             {!! Form::open(['route'=>['comments.store',$post->id]]) !!}
             <div class=" d-flex align-items-center justify-content-bt comment-group">
-                <input type="text" class="comment-input" placeholder="Add a new Comment" name="comments">
+                <input type="text" id="comments" class="comment-input @error('comments') is-invalid @enderror"
+                    placeholder="Add a new Comment" name="comments">
                 <button class="comment-btn"><i class="fas fa-play"></i></button></div>
             {!! Form::close() !!}
+
         </div>
 
     </li>
 </ul>
+<div class="d-block p-20">
+    @error('comments')
+    <span class="invalid-feedback d-block" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+</div>
 
 </div>
 

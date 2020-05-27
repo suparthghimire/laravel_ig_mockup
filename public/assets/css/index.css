@@ -41,6 +41,9 @@ a {
 .w-45 {
     width: 45vw;
 }
+.w-40 {
+    width: 40vw;
+}
 .w-80 {
     width: 80vw;
 }
@@ -192,4 +195,8 @@ a {
     background-color: red;
     bottom: -10px;
     left: 42%;
+}
+
+.red {
+    color: red;
 }

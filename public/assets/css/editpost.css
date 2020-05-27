@@ -1,0 +1,55 @@
+.edit-text {
+    border: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border-bottom: 2px solid white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: 150ms ease-in-out;
+    color: white;
+}
+
+.edit-text:focus {
+    outline: none;
+    border-color: rgb(91, 155, 250);
+}
+.post-img {
+    position: relative;
+}
+.file-btn {
+    /* padding: 10px; */
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: rgb(91, 155, 250);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.2rem;
+    transition: 150ms ease-in-out;
+    /* transform: translateY(0px); */
+}
+
+.file-btn:hover {
+    background: rgb(91, 155, 250);
+    color: white;
+    animation: fly 250ms;
+}
+@keyframes fly {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

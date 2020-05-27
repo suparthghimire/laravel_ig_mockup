@@ -7,7 +7,7 @@
 require("./bootstrap");
 
 window.Vue = require("vue");
-
+window.Fire = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -30,6 +30,10 @@ Vue.component(
     "like-component",
     require("./components/LikeComponent.vue").default
 );
+Vue.component(
+    "search-component",
+    require("./components/SearchComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,4 +46,15 @@ const followBtn = new Vue({
 });
 const likeBtn = new Vue({
     el: "#likeBtn"
+});
+const search = new Vue({
+    el: "#search",
+    data: {
+        search: "11"
+    },
+    methods: {
+        searchIt: _.debounce(() => {
+            console.log(1);
+        })
+    }
 });

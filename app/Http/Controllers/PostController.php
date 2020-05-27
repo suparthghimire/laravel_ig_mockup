@@ -74,9 +74,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+
+        $this->authorize('update', $post);
+        return view('posts.edit')->withPost($post);
     }
 
     /**
@@ -86,9 +88,31 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+
+        $this->authorize('update', $post);
+        $this->validate($request, [
+            'caption' => '',
+            'image' => 'image',
+        ]);
+        $post->caption = $request->input('caption');
+        $post->user_id = auth()->user()->id;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imgName = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('storage/uploads/posts/' . $imgName);
+            Image::make($image)->save($location);
+
+            $oldImg = $post->image;
+
+            Storage::delete($oldImg);
+
+            $post->image = $imgName;
+        }
+        $post->save();
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -97,9 +121,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $post = Post::find($id);
+        $this->authorize('update', $post);
+
         // dd('storage/uploads/posts/' . $post->image);
         File::delete('storage/uploads/posts/' . $post->image);        // dd($post->image);
         $post->delete();

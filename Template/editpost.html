@@ -20,15 +20,15 @@
                     class="header d-flex justify-content-bt w-100 align-items-center"
                 >
                     <div
-                        class="header-wrapper d-flex align-items-center w-30 justify-content-bt"
+                        class="header-wrapper d-flex align-items-center w-40 justify-content-bt"
                     >
                         <a href="#" class="text-white">
                             <i class="fas fa-times text-md"></i>
                         </a>
-                        <h2 class="header-title">Edit Profile</h2>
+                        <h2 class="header-title">Edit Post</h2>
                     </div>
                     <div>
-                        <a href="#" action="process.php" class="text-primary">
+                        <a href="#" class="text-primary">
                             <label for="submit"
                                 ><i class="fas fa-check text-md"></i
                             ></label>
@@ -41,8 +41,28 @@
                         </a>
                     </div>
                 </header>
-                <main class="edit mt-30">
-                    <div class="edit-post-hero"></div>
+                <main class="edit">
+                    <div class="edit-post-hero p-20">
+                        <div class="profile-info">
+                            <div class="profile-img">
+                                <img src="img/profiles/profile.jpg" alt="" />
+                            </div>
+                            <span
+                                class="profile-name post-profile-name text-white"
+                            >
+                                suparth.ghimrie
+                            </span>
+                        </div>
+                        <div class="post-img">
+                            <img src="img/posts/posts.jpg" alt="" />
+                        </div>
+                        <input
+                            type="text"
+                            class="edit-text"
+                            value="Caption"
+                            placeholder="This is Caption of the Image"
+                        />
+                    </div>
                 </main>
             </form>
         </div>

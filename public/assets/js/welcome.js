@@ -1,6 +1,7 @@
-const likeBtn = document.querySelectorAll(".button");
+const likeBtn = document.querySelectorAll("button");
+// const att = document.getAttribute("console");
 
-console.log(likeBtn);
+console.log(likeBtn[0]);
 
 // likeBtn.addEventListener("click", () => {
 //     console.log(1);

@@ -1,10 +1,17 @@
-.user-info {
-    width: 52vw;
+.edit-text {
+    border: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border-bottom: 2px solid white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: 150ms ease-in-out;
+    color: white;
 }
-.post-hero {
-    padding: 10px 20px;
-}
-.post-hero-img {
-    width: 40px;
-    height: 40px;
+
+.edit-text:focus {
+    outline: none;
+    border-color: rgb(91, 155, 250);
 }

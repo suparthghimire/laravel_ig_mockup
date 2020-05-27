@@ -1,0 +1,43 @@
+.search {
+    background: rgb(83, 83, 83);
+}
+.search-box {
+    width: 90%;
+    padding: 10px;
+    border: 0;
+    background: transparent;
+}
+.search-box:focus {
+    outline: none;
+}
+button {
+    border: 0;
+    background: transparent;
+}
+button:focus {
+    outline: none;
+}
+
+button {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #444444;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0, 0) rotate3d(0, 0, 0, 0);
+    transition: 150ms ease-in-out;
+}
+
+button:hover::after {
+    transform: scale(1, 1) rotate3d(0, 0, 1, 360deg);
+}

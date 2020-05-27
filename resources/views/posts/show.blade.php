@@ -38,9 +38,11 @@
             </label>
             <div class="settings-container">
                 <ul class="settings-list">
+                    @can('update', $post)
                     <li class="settings-item">
-                        <a href="#" class="settings-link">Edit Post</a>
+                        <a href="{{route('posts.edit',$post->id)}}" class="settings-link">Edit Post</a>
                     </li>
+
                     <li class="settings-item">
                         {{ Form::open(['route'=>['posts.destroy',$post->id],'method'=>'POST']) }}
                         @method('DELETE')
@@ -48,6 +50,7 @@
                         {{-- <a href="#" class="settings-link">Delete This Post</a> --}}
                         {{ Form::close() }}
                     </li>
+                    @endcan
                     <li class="settings-item">
                         <a href="#" class="settings-link">Copy Link</a>
                     </li>
@@ -72,20 +75,22 @@
                     <li class="action-item">
                         {!! Form::open(['route'=>['like',$post->id],'method'=>'post']) !!}
                         <button class="button" id="button">
+                            @if(App\Like::where(['user_id'=>auth()->user()->id,'post_id'=>$post->id])->get()->count()!=0)
+                            <i id="like" class="fas fa-heart red"></i>
+                            @else
                             <i id="like" class="far fa-heart white"></i>
+                            @endif
                         </button>
                         {!! Form::close() !!}
                     </li>
                     <li class="action-item">
-                        <a href="#" class="action-link"><i class="far fa-comment"></i></a>
+                        <a href="{{route('comments.show',$post->id)}}" class="action-link"><i
+                                class="far fa-comment"></i></a>
                     </li>
                     <li class="action-item">
                         <a href="#" class="action-link"><i class="fas fa-paper-plane"></i></a>
                     </li>
                 </ul>
-            </div>
-            <div class="post-action-right">
-                <a href="#"><i class="far fa-bookmark"></i></a>
             </div>
         </div>
         <p class="post-likes">{{$post->likes->count()}} Likes</p>
@@ -102,7 +107,9 @@
         <div class="post-comment mb-20 ">
             <div class="post-highlighted-comment">
                 @if($post->comments->count()==0)
-                <a class="text-white text-sm">This post Has No Comments. Add One?</a>
+                <a href="{{route('comments.show',$post->id)}}" class=" text-white text-sm">This post Has No Comments.
+                    Add
+                    One?</a>
                 @else
                 <a href="{{route('comments.show',$post->id)}}" class="text-white text-sm mtb-10">View all
                     {{$post->comments->count()}} Comments and Add
