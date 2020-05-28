@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WelcomeController@index')->name('index');
+Route::get('/index', 'WelcomeController@indexVue');
+// Route::post('/index', 'WelcomeController@indexVue');
+
 
 Auth::routes();
 
@@ -43,3 +46,5 @@ Route::post('comments/{post}', 'CommentsController@store')->name('comments.store
 Route::get('comments/{post}', 'CommentsController@show')->name('comments.show');
 
 Route::get('/back', 'RedirectController@backPg')->name('back');
+
+Route::get('x/{post}', 'LikesController@x');

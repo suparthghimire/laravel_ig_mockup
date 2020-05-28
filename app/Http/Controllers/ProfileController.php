@@ -22,6 +22,7 @@ class ProfileController extends Controller
     public function index($user)
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($user) : false;
+
         $user = User::findOrFail($user);
         $posts = Post::orderBy('created_at', 'desc')->get();
         return view('profile.index')->withPosts($posts)->withUser($user)->withFollows($follows);

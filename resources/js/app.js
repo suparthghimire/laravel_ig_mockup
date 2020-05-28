@@ -34,6 +34,10 @@ Vue.component(
     "search-component",
     require("./components/SearchComponent.vue").default
 );
+Vue.component(
+    "welcome-component",
+    require("./components/WelcomeComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -48,13 +52,24 @@ const likeBtn = new Vue({
     el: "#likeBtn"
 });
 const search = new Vue({
-    el: "#search",
+    el: "#search"
+});
+const welcome = new Vue({
+    el: "#welcome",
     data: {
-        search: "11"
+        posts: {},
+        auth: {}
     },
-    methods: {
-        searchIt: _.debounce(() => {
-            console.log(1);
-        })
+    mounted() {
+        axios
+            .get("/index")
+            .then(response => {
+                this.posts = response.data.posts;
+                this.auth = response.data.auth;
+                console.log(response);
+            })
+            .catch(errors => {
+                console.log(errors);
+            });
     }
 });

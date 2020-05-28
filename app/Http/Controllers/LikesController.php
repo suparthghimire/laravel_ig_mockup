@@ -29,11 +29,12 @@ class LikesController extends Controller
             $like->save();
             // $post->user->notify(new PostLiked(User::findOrFail($user_id)));
             $post->user->notify(new PostLiked(User::findOrFail($user_id), Post::findOrFail($post->id)));
-
-            return redirect()->back();
+            return 'liked';
+            // return redirect()->back();
         } else {
             $checkUser_data->delete();
-            return redirect()->back();
+            return 'unliked';
+            // return redirect()->back();
             // return $checkUser;
         }
     }

@@ -1,6 +1,13 @@
 @extends('layouts.user') @section('stylesheets')
 <link rel="stylesheet" href="{{asset('assets/css/home-index.css')}}" />
 @endsection @section('content')
+
+
+
+{{-- <div id="welcome">
+    <welcome-component></welcome-component>
+</div>
+ --}}
 <header class="header" id="header">
     <nav class="nav" id="nav">
         <h1 class="logo" id="logo">
@@ -25,7 +32,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/add_new_stories.png')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/add_new_stories.png" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -35,7 +42,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/suparth.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/suparth.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -45,7 +52,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/siddharth.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/siddharth.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -55,7 +62,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/susmita.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -65,7 +72,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/suresh.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/suresh.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -75,7 +82,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/susmita.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -85,7 +92,7 @@
                 <div class="story-content">
                     <div class="story-img">
                         <a href="#" class="story-link">
-                            <img src="{{asset('assets/img/stories/sabitra.jpg')}}" alt="Add new Story" />
+                            <img src="assets/img/stories/sabitra.jpg" alt="Add new Story" />
                         </a>
                     </div>
                     <p class="story-user-name">Your Name</p>
@@ -93,6 +100,109 @@
             </li>
         </ul>
     </section>
+</header>
+<main class="posts">
+    <div id="welcome">
+        <welcome-component v-for='post in posts' :username=post.user.name :userimage=post.user.profile.image
+            :postimage=post.image :postid=post.id :postcaption=post.caption :postcomments=post.comments
+            :userid=post.user.id :postlikes=post.likes :userlikes=auth>
+        </welcome-component>
+    </div>
+</main>
+
+
+{{-- <header class="header" id="header">
+    <nav class="nav" id="nav">
+        <h1 class="logo" id="logo">
+            Finsta
+        </h1>
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item" id="nav-item">
+                <a href="#" class="nav-link" id="nav-link">
+                    <i class="far fa-play-circle"></i>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item">
+                <a href="#" class="nav-link" id="nav-link">
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section class="stories">
+        <ul class="story-list">
+            <li class="story-item">
+                <div class="story-content">
+                    <div class="story-img">
+                        <a href="#" class="story-link">
+                            <img src="{{asset('assets/img/stories/add_new_stories.png')}}" alt="Add new Story" />
+</a>
+</div>
+<p class="story-user-name">Your Name</p>
+</div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/suparth.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/siddharth.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/suresh.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/susmita.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+<li class="story-item">
+    <div class="story-content">
+        <div class="story-img">
+            <a href="#" class="story-link">
+                <img src="{{asset('assets/img/stories/sabitra.jpg')}}" alt="Add new Story" />
+            </a>
+        </div>
+        <p class="story-user-name">Your Name</p>
+    </div>
+</li>
+</ul>
+</section>
 </header>
 
 <main class="posts">
@@ -126,7 +236,7 @@
                 <div class="post-action-left">
                     <ul class="action-list">
                         <li class="action-item" id="likeBtn">
-                            {{-- {!!
+                            {!!
                             Form::open(['route'=>['like',$post->id],'method'=>'post'])
                             !!}
                             <button class="button" id="button">
@@ -136,14 +246,7 @@
                                 <i id="like" class="far fa-heart white"></i>
                                 @endif
                             </button>
-                            {!! Form::close() !!} --}}
-                            <button class="button" id="button" data-target="console">
-                                @if(App\Like::where(['user_id'=>auth()->user()->id,'post_id'=>$post->id])->get()->count()!=0)
-                                <i id="like" class="fas fa-heart red"></i>
-                                @else
-                                <i id="like" class="far fa-heart white"></i>
-                                @endif
-                            </button>
+                            {!! Form::close() !!}
                         </li>
                         <li class="action-item">
                             <a href="{{route('comments.show',$post->id)}}" class="action-link"><i
@@ -179,7 +282,7 @@
             </div>
         </div>
         @endforeach @endif
-</main>
+</main> --}}
 
 @endsection
 

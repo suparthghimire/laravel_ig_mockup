@@ -58,7 +58,8 @@ export default {
     data() {
         return {
             keywords: "",
-            results: []
+            results: [],
+            likes: []
         };
     },
     methods: {
@@ -73,6 +74,7 @@ export default {
                     console.log(errors);
                 });
         },
+
         linkUser(result) {
             location.href = "/profile/" + result.id;
         },
