@@ -14,7 +14,10 @@
         <h2 class="header-title">Posts</h2>
     </div>
 </header>
-<main class="posts mt-30">
+<main class="posts mt-30" id="post">
+
+
+
     <div class="post-wrapper">
         <div class="post-header">
             <div class="profile-info">
@@ -47,7 +50,6 @@
                         {{ Form::open(['route'=>['posts.destroy',$post->id],'method'=>'POST']) }}
                         @method('DELETE')
                         {{ Form::submit('Delete This Post', ['class'=>'settings-link remove-btn-properties']) }}
-                        {{-- <a href="#" class="settings-link">Delete This Post</a> --}}
                         {{ Form::close() }}
                     </li>
                     @endcan
@@ -69,32 +71,9 @@
         <div class="post-img">
             <img src="/storage/uploads/posts/{{$post->image}}" alt="">
         </div>
-        <div class="post-action">
-            <div class="post-action-left">
-                <ul class="action-list">
-                    <li class="action-item">
-                        {!! Form::open(['route'=>['like',$post->id],'method'=>'post']) !!}
-                        <button class="button" id="button">
-                            @if(App\Like::where(['user_id'=>auth()->user()->id,'post_id'=>$post->id])->get()->count()!=0)
-                            <i id="like" class="fas fa-heart red"></i>
-                            @else
-                            <i id="like" class="far fa-heart white"></i>
-                            @endif
-                        </button>
-                        {!! Form::close() !!}
-                    </li>
-                    <li class="action-item">
-                        <a href="{{route('comments.show',$post->id)}}" class="action-link"><i
-                                class="far fa-comment"></i></a>
-                    </li>
-                    <li class="action-item">
-                        <a href="#" class="action-link"><i class="fas fa-paper-plane"></i></a>
-                    </li>
-                </ul>
-            </div>
+        <div id="action">
+            <action-component :postid="{{$post->id}}" :postlikes={{$post->likes}}></action-component>
         </div>
-        <p class="post-likes">{{$post->likes->count()}} Likes</p>
-        {{-- {{dd($post->caption)}} --}}
         @if ($post->caption)
         <p class="caption">
             <a href="{{route('profile.index',$post->user->id)}}"
@@ -118,7 +97,6 @@
             </div>
         </div>
     </div>
-    </div>
-
 </main>
+<script src="{{ mix('js/app.js') }}"></script>
 @endsection

@@ -65,7 +65,15 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.show')->withPost($post);
+        return view('posts.show')->withPost($post)->with('user');
+    }
+
+    public function getSinglePost($id)
+    {
+        $post = Post::findOrFail($id)->with('likes');
+        return response()->json([
+            'post' => $post
+        ]);
     }
 
     /**

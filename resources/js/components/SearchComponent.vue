@@ -36,6 +36,12 @@
                                 <div class="profile-img">
                                     <img
                                         :src="imgName(result)"
+                                        v-if="result.profile.image"
+                                        alt="Profile Image"
+                                    />
+                                    <img
+                                        v-else
+                                        src="assets/img/default/default.jpg"
                                         alt="Profile Image"
                                     />
                                 </div>

@@ -21,12 +21,24 @@
             <div class="post-img">
                 <img :src="postImg" />
             </div>
-            <div class="post-action">
+            <div id="action">
+                <action-component
+                    :postid="this.postid"
+                    :postlikes="this.postlikes"
+                ></action-component>
+            </div>
+            <!-- <div class="post-action">
                 <div class="post-action-left">
                     <ul class="action-list">
                         <li class="action-item" id="likeBtn">
-                            <i id="like" class="far fa-heart" @click="like"></i>
                             <i
+                                id="like"
+                                class="far fa-heart"
+                                @click="like"
+                                v-if="userlike == 0"
+                            ></i>
+                            <i
+                                v-else
                                 id="like"
                                 class="fas fa-heart red"
                                 @click="like"
@@ -45,11 +57,11 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            <p class="post-likes">
+            </div> -->
+            <!-- <p class="post-likes">
                 {{ likeCount }}
                 Likes
-            </p>
+            </p> -->
             <p class="caption" v-if="postcaption">
                 <span class="text-white profile-name">
                     {{ username }}
@@ -70,15 +82,18 @@
                         Here</span
                     >
                 </div>
-                userlikes post_id {{ userlikes.fore }}
+                <!-- userlikes post_id {{ userlikes.fore }} -->
+
                 <br />
-                posttlikes post_id {{ postlikes }}
+                <!-- posttlikes post_id {{ postlikes }} -->
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { ActionComponent } from "./ActionComponent";
+
 export default {
     props: [
         "postid",
@@ -88,14 +103,14 @@ export default {
         "userimage",
         "postcaption",
         "postcomments",
-        "postlikes",
-        "userlikes"
+        "postlikes"
     ],
     data() {
         return {
             postImg: "/storage/uploads/posts/" + this.postimage,
             profileimg: "/storage/uploads/profile/" + this.userimage,
-            likeCount: 0
+            likeCount: 0,
+            userlike: 0
         };
     },
     created() {
@@ -107,22 +122,6 @@ export default {
         },
         commentLocation() {
             location.href = "/comments/" + this.postid;
-        },
-        like() {
-            axios
-                .post("/like/" + this.postid)
-                .then(response => {
-                    console.log(response.data);
-                    if (response.data == "unliked") {
-                        this.likeCount -= 1;
-                    } else {
-                        this.likeCount += 1;
-                    }
-                    console.log(response);
-                })
-                .catch(errors => {
-                    console.log(errors);
-                });
         }
     }
 };

@@ -19,16 +19,13 @@ window.Fire = new Vue();
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-const follow = require("./components/FollowComponent.vue").default;
-const lileBtn = require("./components/LikeComponent.vue").default;
-
 Vue.component(
     "follow-component",
     require("./components/FollowComponent.vue").default
 );
 Vue.component(
-    "like-component",
-    require("./components/LikeComponent.vue").default
+    "action-component",
+    require("./components/ActionComponent.vue").default
 );
 Vue.component(
     "search-component",
@@ -48,8 +45,8 @@ Vue.component(
 const followBtn = new Vue({
     el: "#followBtn"
 });
-const likeBtn = new Vue({
-    el: "#likeBtn"
+const action = new Vue({
+    el: "#action"
 });
 const search = new Vue({
     el: "#search"
@@ -57,8 +54,7 @@ const search = new Vue({
 const welcome = new Vue({
     el: "#welcome",
     data: {
-        posts: {},
-        auth: {}
+        posts: {}
     },
     mounted() {
         axios
@@ -66,7 +62,6 @@ const welcome = new Vue({
             .then(response => {
                 this.posts = response.data.posts;
                 this.auth = response.data.auth;
-                console.log(response);
             })
             .catch(errors => {
                 console.log(errors);

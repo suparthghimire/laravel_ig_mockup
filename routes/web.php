@@ -22,7 +22,8 @@ Auth::routes();
 
 
 Route::resource('posts', 'PostController')->except('index');
-Route::get('/posts', 'WelcomeController@index')->name('post.index');
+Route::get('/getsinglepost/{id}', 'PostController@getSinglePost');
+
 Route::get('/notification', 'NotificationController@index')->name('notification.index');
 
 
@@ -34,7 +35,6 @@ Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.updat
 Route::get('/search', 'ProfileController@searchView')->name('searchView');
 
 Route::post('/search', 'ProfileController@search')->name('search');
-// Route::get('/searchuser', 'ProfileController@search')->name('search');
 Route::get('/searchuser/{user}', 'ProfileController@search')->name('search');
 
 
@@ -47,4 +47,4 @@ Route::get('comments/{post}', 'CommentsController@show')->name('comments.show');
 
 Route::get('/back', 'RedirectController@backPg')->name('back');
 
-Route::get('x/{post}', 'LikesController@x');
+Route::get('checklike/{post}', 'WelcomeController@checkLike');
